@@ -1,8 +1,8 @@
             label1.Visible = true;
             label1.Text = "Start Download From FTP";
             string selected_file = listBox1.GetItemText(listBox1.SelectedItem);
-            string local = @"C:\Local";
-            String url = "yourftp";
+            string local = @"C:\Local"; //yourlocallocation
+            String url = "yourftp"; //yourftpserver
             NetworkCredential credentials = new NetworkCredential("user", "password");
             if (!Directory.Exists(local))
             {
@@ -13,8 +13,7 @@
             listRequest.Method = WebRequestMethods.Ftp.ListDirectoryDetails;
             listRequest.Credentials = credentials;
             
-            //listRequest.Method = WebRequestMethods.Ftp.GetFileSize;
-            //int size = (int)listRequest.GetResponse().ContentLength;
+            
 
             List<string> lines = new List<string>();
 
